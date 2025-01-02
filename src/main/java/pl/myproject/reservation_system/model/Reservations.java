@@ -1,21 +1,19 @@
 package pl.myproject.reservation_system.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 @Entity
-public class Revervation {
+
+public class Reservations {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String customerName;
-    private LocalDateTime reservationDate;
+    private LocalDateTime date;
     private int numberOfPeople;
 
-    public Revervation() {
+    public Reservations() {
     }
 
     public Integer getId() {
@@ -34,12 +32,12 @@ public class Revervation {
         this.numberOfPeople = numberOfPeople;
     }
 
-    public LocalDateTime getReservationDate() {
-        return reservationDate;
+    public LocalDateTime getDate() {
+        return date;
     }
 
-    public void setReservationDate(LocalDateTime reservationDate) {
-        this.reservationDate = reservationDate;
+    public void setDate(LocalDateTime reservationDate) {
+        this.date = reservationDate;
     }
 
     public String getCustomerName() {

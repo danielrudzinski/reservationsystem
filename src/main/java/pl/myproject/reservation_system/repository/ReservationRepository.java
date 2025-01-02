@@ -1,7 +1,7 @@
 package pl.myproject.reservation_system.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import pl.myproject.reservation_system.model.Revervation;
+import pl.myproject.reservation_system.model.Reservations;
 
-public interface ReservationRepository extends CrudRepository<Revervation,Integer> {
+public interface ReservationRepository extends CrudRepository<Reservations,Integer> {
 }

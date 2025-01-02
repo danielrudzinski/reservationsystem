@@ -9,6 +9,8 @@ import org.springframework.web.util.UriComponents;
 import pl.myproject.reservation_system.model.Reservations;
 import pl.myproject.reservation_system.repository.ReservationRepository;
 
+import java.time.LocalDateTime;
+
 @Service
 public class ReservationService {
     private final ReservationRepository reservationRepository;
@@ -35,7 +37,7 @@ public class ReservationService {
         if(reservation.getCustomerName()==null){
             return ResponseEntity.badRequest().body(null);
         }
-       if(reservation.getDate() == null){
+       if(reservation.getDate() == null || reservation.getDate().isBefore(LocalDateTime.now())){
            return ResponseEntity.badRequest().body(null);
        }
 

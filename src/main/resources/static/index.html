@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Rezerwacji</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>System Rezerwacji</h1>
+    <form id="reservationForm">
+        <input type="text" id="customerName" placeholder="Imię Klienta" required>
+        <input type="datetime-local" id="date" required>
+        <input type="number" id="numberOfPeople" placeholder="Liczba osób" min="1" required>
+        <button type="submit">Dodaj Rezerwację</button>
+    </form>
+    <h2>Lista Rezerwacji</h2>
+    <ul id="reservationList"></ul>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

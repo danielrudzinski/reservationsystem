@@ -32,6 +32,12 @@ public class ReservationService {
         if(reservation.getNumberOfPeople()<1){
             return ResponseEntity.badRequest().body(null);
         }
+        if(reservation.getCustomerName()==null){
+            return ResponseEntity.badRequest().body(null);
+        }
+       if(reservation.getDate() == null){
+           return ResponseEntity.badRequest().body(null);
+       }
 
 
         Reservations savedReservation = reservationRepository.save(reservation);

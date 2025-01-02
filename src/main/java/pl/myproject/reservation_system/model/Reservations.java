@@ -11,6 +11,7 @@ public class Reservations {
     private Integer id;
     private String customerName;
     private LocalDateTime date;
+
     private int numberOfPeople;
 
     public Reservations() {

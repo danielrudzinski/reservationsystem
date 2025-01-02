@@ -12,9 +12,17 @@ public class ReservationService {
         this.reservationRepository = reservationRepository;
     }
 
-
+    /// get
     public ResponseEntity<Iterable<Reservations>> getAllReservations() {
         Iterable<Reservations> reservations = reservationRepository.findAll();
         return ResponseEntity.ok(reservations);
     }
+
+    public ResponseEntity<Reservations> getReservationById(int id) {
+        return reservationRepository.findById(id)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+
 }
